@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="06573162-f9f7-4d5b-8353-d1e1570dcf8b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vehicle.`Reg_No` AS vehicle_Reg_No,
+     vehicle.`Brand` AS vehicle_Brand,
+     vehicle.`Model` AS vehicle_Model,
+     vehicle.`Fuel_type` AS vehicle_Fuel_type,
+     vehicle.`ChassisNo` AS vehicle_ChassisNo,
+     vehicle.`Date` AS vehicle_Date,
+     vehicle.`Status` AS vehicle_Status,
+     vehicle.`DutyStatus` AS vehicle_DutyStatus
+FROM
+     `vehicle` vehicle]]>
+	</queryString>
+	<field name="vehicle_Reg_No" class="java.lang.String"/>
+	<field name="vehicle_Brand" class="java.lang.String"/>
+	<field name="vehicle_Model" class="java.lang.String"/>
+	<field name="vehicle_Fuel_type" class="java.lang.String"/>
+	<field name="vehicle_ChassisNo" class="java.lang.String"/>
+	<field name="vehicle_Date" class="java.sql.Date"/>
+	<field name="vehicle_Status" class="java.lang.String"/>
+	<field name="vehicle_DutyStatus" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="3512fe42-a080-4652-8c23-1d6160c01769"/>
+				<imageExpression><![CDATA["leaf_banner_violet.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="704cb337-59ed-4578-994c-56fd8ca4e1a4"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Violet Title]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="eba028fe-755c-4d4c-869a-61c480a982f3"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="69" height="15" uuid="ef92dbc1-2f94-4b42-82c1-1d0204aeab39"/>
+				<text><![CDATA[Vehicle No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="69" y="19" width="69" height="15" uuid="879dfd89-2161-4704-b964-7c6405eb370f"/>
+				<text><![CDATA[vehicleBrand]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="19" width="69" height="15" uuid="06c2a871-1a3b-4e8b-8d6c-0e87dcc6572f"/>
+				<text><![CDATA[vehicleModel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="207" y="19" width="69" height="15" uuid="e3155003-eb2e-4e19-9d8e-eb6d3bb637b3"/>
+				<text><![CDATA[vehicle_Fuel_type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="69" height="15" uuid="83de86f9-9d42-4952-9422-018ed77d3ee6"/>
+				<text><![CDATA[vehicle_ChassisNo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="345" y="19" width="69" height="15" uuid="aa276c22-b374-491a-a189-dc6c12f16079"/>
+				<text><![CDATA[vehicle_Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="19" width="69" height="15" uuid="c1641a70-0118-4d80-a9b1-64e52f04ad6d"/>
+				<text><![CDATA[vehicle_Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="483" y="19" width="69" height="15" uuid="a570c00c-f564-490f-abc3-681790543729"/>
+				<text><![CDATA[vehicle_DutyStatus]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="486de0d9-7093-47ce-9a67-53552a07a74c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="69" height="15" uuid="a4ca95d4-fe93-45ee-b5b8-bd4567b79910"/>
+				<textFieldExpression><![CDATA[$F{vehicle_Reg_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="69" y="0" width="69" height="15" uuid="e5d71a7c-764e-4537-a265-a20e29d217da"/>
+				<textFieldExpression><![CDATA[$F{vehicle_Brand}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="138" y="0" width="69" height="15" uuid="96e1183c-111c-40f8-9cca-640c6b962f7a"/>
+				<textFieldExpression><![CDATA[$F{vehicle_Model}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="207" y="0" width="69" height="15" uuid="6d25f43f-3c66-4645-961e-5356ef6144c9"/>
+				<textFieldExpression><![CDATA[$F{vehicle_Fuel_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="69" height="15" uuid="9800e8de-1c1a-4974-8c9b-0d9c3b68a50b"/>
+				<textFieldExpression><![CDATA[$F{vehicle_ChassisNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="345" y="0" width="69" height="15" uuid="a6b7e99e-0b64-49bc-98a2-cb71e969a237"/>
+				<textFieldExpression><![CDATA[$F{vehicle_Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="414" y="0" width="69" height="15" uuid="920816da-36ea-4383-b087-9ad18ad6739b"/>
+				<textFieldExpression><![CDATA[$F{vehicle_Status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="483" y="0" width="69" height="15" uuid="f3fd1d71-ab2a-4b07-804a-273b6f74579b"/>
+				<textFieldExpression><![CDATA[$F{vehicle_DutyStatus}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="11ad6920-6604-449e-907f-9971fbce4713"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="ca883b37-1177-4d6f-91d4-90a094983fc3"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="e36d256e-0b5b-4668-a5e3-49289eb1cc85"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="26979972-b79f-4245-bf81-fc670e3e614c"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

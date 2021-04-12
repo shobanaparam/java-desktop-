@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="544bf5d6-1c6b-4e70-adac-0be1941e3107">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="18"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     patientdetails.`PID` AS patientdetails_PID,
+     patientdetails.`PatientName` AS patientdetails_PatientName,
+     patientdetails.`Gender` AS patientdetails_Gender,
+     patientdetails.`DOB` AS patientdetails_DOB,
+     patientdetails.`Age` AS patientdetails_Age,
+     patientdetails.`BloodGroup` AS patientdetails_BloodGroup,
+     patientdetails.`NIC` AS patientdetails_NIC,
+     patientdetails.`Address` AS patientdetails_Address,
+     patientdetails.`Phone` AS patientdetails_Phone,
+     patientdetails.`Email` AS patientdetails_Email,
+     patientdetails.`GuardianName` AS patientdetails_GuardianName,
+     patientdetails.`GuardianRelation` AS patientdetails_GuardianRelation,
+     patientdetails.`GuardianAddress` AS patientdetails_GuardianAddress,
+     patientdetails.`GuardianPhone` AS patientdetails_GuardianPhone
+FROM
+     `patientdetails` patientdetails]]>
+	</queryString>
+	<field name="patientdetails_PID" class="java.lang.Integer"/>
+	<field name="patientdetails_PatientName" class="java.lang.String"/>
+	<field name="patientdetails_Gender" class="java.lang.String"/>
+	<field name="patientdetails_DOB" class="java.lang.String"/>
+	<field name="patientdetails_Age" class="java.lang.Integer"/>
+	<field name="patientdetails_BloodGroup" class="java.lang.String"/>
+	<field name="patientdetails_NIC" class="java.lang.String"/>
+	<field name="patientdetails_Address" class="java.lang.String"/>
+	<field name="patientdetails_Phone" class="java.lang.Integer"/>
+	<field name="patientdetails_Email" class="java.lang.String"/>
+	<field name="patientdetails_GuardianName" class="java.lang.String"/>
+	<field name="patientdetails_GuardianRelation" class="java.lang.String"/>
+	<field name="patientdetails_GuardianAddress" class="java.lang.String"/>
+	<field name="patientdetails_GuardianPhone" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="128" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="188" y="0" width="382" height="62" uuid="4ff26877-f5fd-47ee-8815-bfca2ce1d9db"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Durdans Hospital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="62" width="196" height="22" uuid="16eeaf81-f1d2-4a6e-9a28-9b4781b3d50d"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Ward Patients Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="33" width="802" height="1" uuid="336e1b00-7fd4-4c87-8ab1-128e1b45f0cb"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="57" height="33" forecolor="#736343" uuid="fd150f21-e878-48a6-8d4f-1e82512525d4"/>
+				<text><![CDATA[Patient ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="57" y="0" width="57" height="33" forecolor="#736343" uuid="eedcdc91-7ff0-4efb-9efb-b4725d5a9a66"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="114" y="0" width="57" height="33" forecolor="#736343" uuid="0a76c15c-d370-4fe6-8889-8d92bbfb8245"/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="171" y="0" width="57" height="34" forecolor="#736343" uuid="8ecb4a09-dcf8-4d45-aa45-0f5b945acfcd"/>
+				<text><![CDATA[DOB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="228" y="0" width="57" height="33" forecolor="#736343" uuid="f46081c9-4761-4951-8d2b-c346e2d23415"/>
+				<text><![CDATA[Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="285" y="0" width="57" height="33" forecolor="#736343" uuid="ffcb3137-2c6b-4f05-bf15-4e67e8240860"/>
+				<text><![CDATA[Blood Group]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="342" y="0" width="57" height="33" forecolor="#736343" uuid="9a19e2d2-87ac-48d5-808e-9f9a06307695"/>
+				<text><![CDATA[NIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="399" y="0" width="57" height="33" forecolor="#736343" uuid="0a08de9a-d59a-4ec8-99a1-ae1d3939f78e"/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="456" y="0" width="57" height="33" forecolor="#736343" uuid="5cc11790-7a3e-4206-a959-a6a692096235"/>
+				<text><![CDATA[Phone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="513" y="0" width="57" height="33" forecolor="#736343" uuid="e958faa9-4dd9-412e-9d21-3f48591a6ac7"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="570" y="0" width="57" height="33" forecolor="#736343" uuid="adfa2079-7f18-4cc2-9b81-4343c8479cc5"/>
+				<text><![CDATA[Guardian Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="627" y="0" width="57" height="33" forecolor="#736343" uuid="a3e454ac-d7b3-45eb-ba2d-7672736aa8ba"/>
+				<text><![CDATA[Guardian Relation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="684" y="0" width="57" height="33" forecolor="#736343" uuid="af22b328-b3f2-4492-996b-0d343523540e"/>
+				<text><![CDATA[Guardian Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="741" y="0" width="57" height="33" forecolor="#736343" uuid="f6ede6d5-faf0-4ccb-9363-579eb3372f5c"/>
+				<text><![CDATA[Guardian Phone]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="edb9e037-8eb1-48b6-9d23-c7fe35fd791b"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="57" height="15" uuid="849159af-7dfc-4697-ac47-5dfd60885913"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_PID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="57" y="0" width="57" height="15" uuid="d6b297ba-c1e6-4b65-9a68-583dbf259c53"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_PatientName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="114" y="0" width="57" height="15" uuid="2e1b11ad-421c-457e-a1d6-98fca7ecd528"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_Gender}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="171" y="0" width="57" height="15" uuid="7bede7e2-37a6-46ac-a0cd-715d7178a10b"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_DOB}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="228" y="0" width="57" height="15" uuid="ec2611b8-9a6f-409d-980a-c939e7febb6c"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_Age}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="285" y="0" width="57" height="15" uuid="031180f2-8172-46cc-aa95-891c5a26ea5d"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_BloodGroup}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="342" y="0" width="57" height="15" uuid="9e328146-c3da-46a8-981e-b70113a90307"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_NIC}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="399" y="0" width="57" height="15" uuid="0f482ff5-4fe2-4bbb-8d01-5d959591fd7e"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_Address}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="456" y="0" width="57" height="15" uuid="2be7de0e-6615-4bde-8c80-b13d79e9a612"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_Phone}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="513" y="0" width="57" height="15" uuid="50d9eba2-171c-485b-9697-1d40af4b6a6c"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_Email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="570" y="0" width="57" height="15" uuid="6380e2bc-45b5-47c7-802b-8f7bd5ab971c"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_GuardianName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="627" y="0" width="57" height="15" uuid="9474019f-63fb-4ad4-8e41-64f682d15b1c"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_GuardianRelation}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="684" y="0" width="57" height="15" uuid="23c13306-19e5-4a4e-9b21-cf5e277921a2"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_GuardianAddress}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="741" y="0" width="57" height="15" uuid="952be8e8-1da1-403d-9640-612168b8f2d1"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_GuardianPhone}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="7877d53e-7483-4d2d-a7c2-5119731a3394"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="d86249ca-6642-4162-8f30-e2a3a5ddd6c9"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="6adb1ebd-92ae-4aa6-815f-c43ba79d5cc0"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="2c548698-3a26-45bf-9b77-c42c3957f670"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="570b3630-91a5-4530-ae30-8c9349bbf738"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

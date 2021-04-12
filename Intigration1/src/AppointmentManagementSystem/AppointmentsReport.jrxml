@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f876da9b-87aa-4adf-8430-2bc8d88a520f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     patientregistration.`ApointmentID` AS patientregistration_ApointmentID,
+     patientregistration.`Patientname` AS patientregistration_Patientname,
+     patientregistration.`Address` AS patientregistration_Address,
+     patientregistration.`ContactNo` AS patientregistration_ContactNo,
+     patientregistration.`Email` AS patientregistration_Email,
+     patientregistration.`Age` AS patientregistration_Age,
+     patientregistration.`Gen` AS patientregistration_Gen,
+     patientregistration.`Consultantname` AS patientregistration_Consultantname,
+     patientregistration.`DocID` AS patientregistration_DocID,
+     patientregistration.`ConDate` AS patientregistration_ConDate,
+     patientregistration.`Status` AS patientregistration_Status
+FROM
+     `patientregistration` patientregistration]]>
+	</queryString>
+	<field name="patientregistration_ApointmentID" class="java.lang.Integer"/>
+	<field name="patientregistration_Patientname" class="java.lang.String"/>
+	<field name="patientregistration_Address" class="java.lang.String"/>
+	<field name="patientregistration_ContactNo" class="java.lang.Integer"/>
+	<field name="patientregistration_Email" class="java.lang.String"/>
+	<field name="patientregistration_Age" class="java.lang.Integer"/>
+	<field name="patientregistration_Gen" class="java.lang.String"/>
+	<field name="patientregistration_Consultantname" class="java.lang.String"/>
+	<field name="patientregistration_DocID" class="java.lang.String"/>
+	<field name="patientregistration_ConDate" class="java.sql.Date"/>
+	<field name="patientregistration_Status" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="216" y="0" width="432" height="62" uuid="deadac17-4db7-48ac-b76f-86bc00c1f5c4"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Durdans Hospital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="62" width="196" height="22" uuid="fdcaa1b1-51ea-40e5-be01-afd7f20bbbb4"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Appointments details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="6adf2efb-4af5-4a14-8881-259adc72d65f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="72" height="15" forecolor="#736343" uuid="72d5e324-77ad-420f-affa-9d32221cabf3"/>
+				<text><![CDATA[Apointment ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="72" y="0" width="72" height="15" forecolor="#736343" uuid="eed3126a-fe83-48f8-81fa-21debd56b303"/>
+				<text><![CDATA[Patient Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="144" y="0" width="72" height="15" forecolor="#736343" uuid="40a7a039-991a-4364-acf8-b369a7084659"/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="216" y="0" width="72" height="15" forecolor="#736343" uuid="fb42f81b-50b0-430a-897d-68918c732670"/>
+				<text><![CDATA[Contact No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="288" y="0" width="72" height="15" forecolor="#736343" uuid="1bec3c47-1e01-46f7-9c74-9e0f0e07758d"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="360" y="0" width="72" height="15" forecolor="#736343" uuid="d6bc7e40-cd50-43e8-a67c-878e55540e5f"/>
+				<text><![CDATA[Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="432" y="0" width="72" height="15" forecolor="#736343" uuid="36dded6a-247d-4b55-a688-e04d14ec69d1"/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="504" y="0" width="72" height="15" forecolor="#736343" uuid="ec93e43a-cde5-4cc7-8701-c99d4fd1c28f"/>
+				<text><![CDATA[Consultant Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="576" y="0" width="72" height="15" forecolor="#736343" uuid="0bd2518a-d286-41ac-a981-e75fa5ef3f53"/>
+				<text><![CDATA[Doctor ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="648" y="0" width="72" height="15" forecolor="#736343" uuid="40fb171f-0321-42c2-afa6-cc2213d0c097"/>
+				<text><![CDATA[Con Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="720" y="0" width="72" height="15" forecolor="#736343" uuid="c7391db9-c442-4b2a-9d44-a71b505deb7d"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="eebfb63d-c027-4bfb-81f1-a4a8ff6087bc"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="72" height="15" uuid="0c9dbea9-f2e5-4ef4-9ea1-555e4fed3b16"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_ApointmentID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="72" y="0" width="72" height="15" uuid="dfe6d4a5-4f49-42f6-be68-82e375c6030a"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_Patientname}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="144" y="0" width="72" height="15" uuid="b2772e0c-f540-468d-a4bf-5d031d5b0546"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_Address}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="216" y="0" width="72" height="15" uuid="d5b99d3c-1b91-447a-a8d7-2da9c5e91b2d"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_ContactNo}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="288" y="0" width="72" height="15" uuid="807d1b25-ec64-4d24-bd4b-6b49ceb4c469"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_Email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="360" y="0" width="72" height="15" uuid="cbfb69ba-4682-45b4-a211-28cb09ae64b9"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_Age}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="432" y="0" width="72" height="15" uuid="5fc7f30f-ff5e-49fb-983e-2fa8c2af3bb0"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_Gen}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="504" y="0" width="72" height="15" uuid="e3fddb13-f031-4eda-953a-afd496ef81aa"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_Consultantname}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="576" y="0" width="72" height="15" uuid="df042ffe-4365-49b8-af88-8d9aada46775"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_DocID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="648" y="0" width="72" height="15" uuid="edb3f6c4-8785-4e2f-9e53-81711c7a86a2"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_ConDate}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="720" y="0" width="72" height="15" uuid="860a9289-1745-4a22-8ce5-959a18acda41"/>
+					<textFieldExpression><![CDATA[$F{patientregistration_Status}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="95c5e20c-d0a3-4981-be69-2e13b8b5e529"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="0a588612-2943-4081-885c-c0f43d30bd00"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="7ca07f06-3f98-4390-9911-61bbcc008985"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="99cf517f-8d43-4c87-9d0f-2aa6c56d1f4b"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="37ebbb67-250f-40ce-ba26-002b93ce3d7c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

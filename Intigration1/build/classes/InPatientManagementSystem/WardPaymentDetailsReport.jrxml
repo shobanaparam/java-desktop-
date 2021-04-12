@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="69e6583c-658c-4ecd-991c-9341a87be80a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     p.`PID` AS patientdetails_PID,
+     p.`PatientName` AS patientdetails_PatientName,
+     w.`PayID` AS wardpayment_PayID,
+     w.`PID` AS wardpayment_PID,
+     w.`RoomNo` AS wardpayment_RoomNo,
+     w.`AdmittedDate` AS wardpayment_AdmittedDate,
+     w.`DischargeDate` AS wardpayment_DischargeDate,
+     w.`DepositAmount` AS wardpayment_DepositAmount,
+     w.`TotalPayment` AS wardpayment_TotalPayment,
+     w.`DueAmount` AS wardpayment_DueAmount,
+     w.`RoomCharge` AS wardpayment_RoomCharge
+FROM
+     `patientdetails` p,
+     `wardpayment` w
+WHERE
+     p.PID = w.PID]]>
+	</queryString>
+	<field name="wardpayment_PayID" class="java.lang.Integer"/>
+	<field name="patientdetails_PID" class="java.lang.Integer"/>
+	<field name="patientdetails_PatientName" class="java.lang.String"/>
+	<field name="wardpayment_RoomNo" class="java.lang.String"/>
+	<field name="wardpayment_AdmittedDate" class="java.sql.Date"/>
+	<field name="wardpayment_DischargeDate" class="java.sql.Date"/>
+	<field name="wardpayment_DepositAmount" class="java.lang.Double"/>
+	<field name="wardpayment_TotalPayment" class="java.lang.Double"/>
+	<field name="wardpayment_DueAmount" class="java.lang.Double"/>
+	<field name="wardpayment_RoomCharge" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="146" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="213" y="0" width="387" height="62" uuid="a819cf95-5173-4741-bca3-25fabc7dd0d4"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Durdans Hospital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="62" width="196" height="22" uuid="7e5a6670-42d7-4090-bb9f-2575c9dbd326"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Ward Payments Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="32" width="802" height="1" uuid="4a868e4b-09d8-4151-93da-5c1902af0382"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="80" height="33" forecolor="#736343" uuid="01ec439d-f957-4e5e-a858-4bcac22fc891"/>
+				<text><![CDATA[Pay ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="80" y="0" width="80" height="33" forecolor="#736343" uuid="9ca9afe8-7c2d-45df-8ea9-efe5fc338d64"/>
+				<text><![CDATA[Patient ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="160" y="0" width="80" height="33" forecolor="#736343" uuid="0c6b2402-4f05-47ee-bd28-732735eb00e5"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="240" y="0" width="80" height="33" forecolor="#736343" uuid="4d28f447-8033-4728-b0f0-d45c01fe4949"/>
+				<text><![CDATA[Room No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="320" y="0" width="80" height="33" forecolor="#736343" uuid="e21392b8-792f-4b8f-8310-28f8c692851a"/>
+				<text><![CDATA[Admitted Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="400" y="0" width="80" height="33" forecolor="#736343" uuid="d9723d81-f8e5-4d2f-b24c-47b1496e4abd"/>
+				<text><![CDATA[Discharge Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="480" y="0" width="80" height="33" forecolor="#736343" uuid="0ae6c006-bbcb-4c8a-b9bc-2380a26d1d72"/>
+				<text><![CDATA[Deposit Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="560" y="0" width="80" height="33" forecolor="#736343" uuid="017aac62-6eff-45c1-86fc-94b845eb8b1b"/>
+				<text><![CDATA[Total Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="640" y="0" width="80" height="33" forecolor="#736343" uuid="ef451da1-440c-47b1-8fd6-64d62977d913"/>
+				<text><![CDATA[Due Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="720" y="0" width="80" height="33" forecolor="#736343" uuid="d0c82d52-c662-4ec2-a7da-c75630ef6614"/>
+				<text><![CDATA[Room Charge]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="158bb162-03c9-4ece-8830-9fb64f7b7cca"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="80" height="15" uuid="fc5bac86-cda7-46be-8d2e-b6b515409750"/>
+					<textFieldExpression><![CDATA[$F{wardpayment_PayID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="80" y="0" width="80" height="15" uuid="42abbfdc-bfa4-45a8-8cbd-15edec3f0d09"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_PID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="160" y="0" width="80" height="15" uuid="8ec1db91-740d-4b0d-b655-26e07ae38fee"/>
+					<textFieldExpression><![CDATA[$F{patientdetails_PatientName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="240" y="0" width="80" height="15" uuid="06d108e3-d37a-40ef-a003-00b0f1cbef72"/>
+					<textFieldExpression><![CDATA[$F{wardpayment_RoomNo}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="320" y="0" width="80" height="15" uuid="7ff59a92-618f-4a31-8550-63ec13a93f1a"/>
+					<textFieldExpression><![CDATA[$F{wardpayment_AdmittedDate}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="400" y="0" width="80" height="15" uuid="e459f96b-85bb-4d71-99bc-deead41e49d5"/>
+					<textFieldExpression><![CDATA[$F{wardpayment_DischargeDate}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="480" y="0" width="80" height="15" uuid="840f8b33-02e9-4530-82d1-414e3ccd4b13"/>
+					<textFieldExpression><![CDATA[$F{wardpayment_DepositAmount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="560" y="0" width="80" height="15" uuid="d076652f-c412-4f1a-89dc-b6e1404ac3dc"/>
+					<textFieldExpression><![CDATA[$F{wardpayment_TotalPayment}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="640" y="0" width="80" height="15" uuid="37ff8e05-e455-452a-9612-fb4a02d97f4f"/>
+					<textFieldExpression><![CDATA[$F{wardpayment_DueAmount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="720" y="0" width="80" height="15" uuid="98babede-a5a1-43e5-a305-dea8c50fa496"/>
+					<textFieldExpression><![CDATA[$F{wardpayment_RoomCharge}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="86f6b0b4-c6ea-4fdb-94e3-bdd9bba4b3e5"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="c4f5b36a-855e-459d-bf66-02b124bb7612"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="024ea4ab-9e24-47e3-84d2-f03fb370b630"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="9a4bc8a2-85b5-44aa-bfd0-ce56394478a2"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="7fbc313c-e829-4015-b1ce-195a2354eadf"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

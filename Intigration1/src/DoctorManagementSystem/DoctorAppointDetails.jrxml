@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cda56fc2-544d-47b9-a9b0-d8551a289113">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     doctortym.`AllocationID` AS doctortym_AllocationID,
+     doctortym.`DoctorName` AS doctortym_DoctorName,
+     doctortym.`Special` AS doctortym_Special,
+     doctortym.`DoctorType` AS doctortym_DoctorType,
+     doctortym.`WardNo` AS doctortym_WardNo,
+     doctortym.`Date` AS doctortym_Date
+FROM
+     `doctortym` doctortym]]>
+	</queryString>
+	<field name="doctortym_AllocationID" class="java.lang.Integer"/>
+	<field name="doctortym_DoctorName" class="java.lang.String"/>
+	<field name="doctortym_Special" class="java.lang.String"/>
+	<field name="doctortym_DoctorType" class="java.lang.String"/>
+	<field name="doctortym_WardNo" class="java.lang.String"/>
+	<field name="doctortym_Date" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="185" y="0" width="412" height="62" uuid="6669e291-59df-4ab0-8187-30d13679b882"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Durdans Hospital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="62" width="196" height="22" uuid="a6576cb1-71e7-4cce-adbd-7d464ba77892"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Doctor Allocation Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="18d16211-4b9b-485b-b02e-acedd677f294"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="133" height="15" forecolor="#736343" uuid="2d679901-5002-4e7b-aabd-cd83c1a09d60"/>
+				<text><![CDATA[Allocation ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="133" y="0" width="133" height="15" forecolor="#736343" uuid="ae8f3019-b390-45bc-b191-dffafe5bf435"/>
+				<text><![CDATA[Doctor Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="266" y="0" width="133" height="15" forecolor="#736343" uuid="73feb6ea-bfa4-482f-bf5a-e0818faa7fd5"/>
+				<text><![CDATA[Special]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="399" y="0" width="133" height="15" forecolor="#736343" uuid="e420efa8-8393-47ac-935c-05f7827ff461"/>
+				<text><![CDATA[Doctor Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="532" y="0" width="133" height="15" forecolor="#736343" uuid="4c542833-7f39-4272-a8f6-210062df5acc"/>
+				<text><![CDATA[Ward No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="665" y="0" width="133" height="15" forecolor="#736343" uuid="aab9807f-52fa-41b5-883f-a8e7f5b143cc"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="8736ffb1-e672-405d-9ef8-8b4814ee75d8"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="133" height="15" uuid="a43e3a54-4b99-4167-9d6d-293b2ba405fc"/>
+					<textFieldExpression><![CDATA[$F{doctortym_AllocationID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="133" y="0" width="133" height="15" uuid="38c09a78-a8e7-48e4-914b-cf2cfdfbac3b"/>
+					<textFieldExpression><![CDATA[$F{doctortym_DoctorName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="266" y="0" width="133" height="15" uuid="4ca08664-016c-4b0e-a5c9-8ffa6a407611"/>
+					<textFieldExpression><![CDATA[$F{doctortym_Special}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="399" y="0" width="133" height="15" uuid="bb7604c4-9ae2-496c-b2e8-212393099752"/>
+					<textFieldExpression><![CDATA[$F{doctortym_DoctorType}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="532" y="0" width="133" height="15" uuid="2b0e3db5-539f-4c36-8d8a-eab207abea2c"/>
+					<textFieldExpression><![CDATA[$F{doctortym_WardNo}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="665" y="0" width="133" height="15" uuid="02c6bf19-bdec-42ff-a742-b0039f4a51e9"/>
+					<textFieldExpression><![CDATA[$F{doctortym_Date}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="de14a538-b1b2-49b9-a8f5-a209afd6f602"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="37757922-86c6-4c4d-a61e-10e43e3982c5"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="3bd17265-583f-4956-ba0b-ce480a408274"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="12b02357-a3a1-4398-b1df-8bfe2706eb44"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="e5bf6305-6fc5-4b11-89b1-202c9411e352"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

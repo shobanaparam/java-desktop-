@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="00a82e25-5370-474f-a705-4a157a425798">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vmaintenance.`Date` AS Date,
+     vmaintenance.`Fuel` AS Fue,
+     vmaintenance.`Services` AS Services,
+     vmaintenance.`Repairs` AS Repairs,
+     vmaintenance.`Revenue_License` AS Revenue_License,
+     vmaintenance.`Insurance` AS Insurance,
+     vmaintenance.`Emission_test` AS test
+FROM
+     `vmaintenance` vmaintenance]]>
+	</queryString>
+	<field name="Date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fue" class="java.lang.String"/>
+	<field name="Services" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Repairs" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Revenue_License" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Insurance" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="test" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="130" y="10" width="263" height="33" uuid="3c606633-30e0-4a43-9b07-336bdc6e26dc"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Green Title]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="be7bbe40-7ea2-43a9-ab18-0aadfc81e5a8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="79" height="15" uuid="f2eb1e79-18af-4167-9e16-ee59f9ee34b2"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="79" y="19" width="79" height="15" uuid="924991f5-777d-4ed3-84c3-e3782a392df8"/>
+				<text><![CDATA[Fuel Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="158" y="19" width="79" height="15" uuid="5d61b194-ded5-4dce-9908-0178915fafa3"/>
+				<text><![CDATA[Services]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="237" y="19" width="79" height="15" uuid="21e62c1d-b284-4fb9-b038-6a69c00f78cb"/>
+				<text><![CDATA[Repairs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="316" y="19" width="95" height="15" uuid="b01cb6ec-d612-484c-bc09-79206e436a5f"/>
+				<text><![CDATA[Revenue License]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="411" y="19" width="79" height="15" uuid="786be0e1-8e4e-4253-a6bc-bebfb7d79823"/>
+				<text><![CDATA[Insurance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="490" y="19" width="63" height="15" uuid="b81714bd-2e01-4df6-b985-56219a103a35"/>
+				<text><![CDATA[test]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="1e2a3d4d-ab26-4970-81c3-0a30259c332f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="79" height="15" uuid="a1d27189-738f-425c-b413-28413a450811"/>
+				<textFieldExpression><![CDATA[$F{Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="79" y="0" width="79" height="15" uuid="99c1844a-554d-418c-b1e3-3c4ae000798b"/>
+				<textFieldExpression><![CDATA[$F{Fue}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="158" y="0" width="79" height="15" uuid="71eb76ae-7760-48b5-a4c2-642af382ab0a"/>
+				<textFieldExpression><![CDATA[$F{Services}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="237" y="0" width="79" height="15" uuid="2db5afc8-98d6-4ef2-bade-aad36cf51011"/>
+				<textFieldExpression><![CDATA[$F{Repairs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="316" y="0" width="95" height="15" uuid="c2486c53-e530-4e25-890d-ae4f615fc368"/>
+				<textFieldExpression><![CDATA[$F{Revenue_License}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="411" y="0" width="63" height="15" uuid="fb162fa1-308d-451b-9ca8-e32d721a9a56"/>
+				<textFieldExpression><![CDATA[$F{Insurance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="490" y="0" width="63" height="15" uuid="a95cc4ed-7c66-4a99-a885-01c8aba07b59"/>
+				<textFieldExpression><![CDATA[$F{test}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="37d0c9f5-7784-4485-beb0-c8ac83f184f2"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="c753c76f-732f-4903-ac28-7a8d97f19adc"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="f833c5d1-dfc3-439b-85d6-8901e3ec5086"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="7f0aed20-70fa-44e6-8299-24e99c859226"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
